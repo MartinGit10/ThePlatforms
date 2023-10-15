@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nombre de Tu Juego</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('background.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        #title {
+            background-image: url('title.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 400px;
+            height: 100px;
+        }
+        #buttons {
+            display: flex;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="title"></div>
+        <div id="buttons">
+            <button id="button1">Botón 1</button>
+            <button id="button2">Botón 2</button>
+        </div>
+    </div>
+    <audio controls autoplay loop>
+        <source src="song.mp3" type="audio/mpeg">
+        Tu navegador no soporta la etiqueta de audio.
+    </audio>
+</body>
+          </html>
+  
