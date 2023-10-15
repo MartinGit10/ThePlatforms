@@ -29,9 +29,16 @@
             display: flex;
             gap: 20px;
         }
+        #horizontalLockImage {
+            display: none;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
+    <div id="horizontalLockImage">
+        <img src="horizontal_lock.png" alt="Por favor, gira tu dispositivo horizontalmente">
+    </div>
     <div class="container">
         <div id="title"></div>
         <div id="buttons">
@@ -43,6 +50,22 @@
         <source src="song.mp3" type="audio/mpeg">
         Tu navegador no soporta la etiqueta de audio.
     </audio>
+    <script>
+        function checkOrientation() {
+            if (window.innerHeight > window.innerWidth) {
+                // La pantalla está en modo vertical
+                document.getElementById('horizontalLockImage').style.display = 'block';
+                document.body.style.display = 'none'; // Ocultar el contenido
+            } else {
+                // La pantalla está en modo horizontal
+                document.getElementById('horizontalLockImage').style.display = 'none';
+                document.body.style.display = 'block'; // Mostrar el contenido
+            }
+        }
+
+        // Verificar la orientación cuando se carga la página y cuando se redimensiona la ventana
+        window.addEventListener('load', checkOrientation);
+        window.addEventListener('resize', checkOrientation);
+    </script>
 </body>
-          </html>
-  
+</html>
