@@ -45,7 +45,6 @@
         <div id="buttons">
             <button id="button1">Botón 1</button>
             <button id="button2">Botón 2</button>
-            <button id="fullscreenButton">Activar Pantalla Completa</button>
         </div>
     </div>
     <audio controls autoplay loop>
@@ -63,14 +62,7 @@
             }
         }
 
-        const fullscreenButton = document.getElementById('fullscreenButton');
         const button1 = document.getElementById('button1');
-
-        fullscreenButton.addEventListener('click', () => {
-            if (document.documentElement.requestFullscreen) {
-                document.documentElement.requestFullscreen();
-            }
-        });
 
         // Redirige al usuario al hacer clic en button1
         button1.addEventListener('click', () => {
