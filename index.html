@@ -10,7 +10,7 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            overflow: hidden; /* Desactivar el scroll */
+            overflow: hidden;
         }
         .container {
             display: flex;
@@ -55,17 +55,16 @@
     <script>
         function checkOrientation() {
             if (window.innerHeight > window.innerWidth) {
-                // La pantalla está en modo vertical
                 document.getElementById('horizontalLockImage').style.display = 'block';
-                document.body.style.display = 'none'; // Ocultar el contenido
+                document.body.style.display = 'none';
             } else {
-                // La pantalla está en modo horizontal
                 document.getElementById('horizontalLockImage').style.display = 'none';
-                document.body.style.display = 'block'; // Mostrar el contenido
+                document.body.style.display = 'block';
             }
         }
 
         const fullscreenButton = document.getElementById('fullscreenButton');
+        const button1 = document.getElementById('button1');
 
         fullscreenButton.addEventListener('click', () => {
             if (document.documentElement.requestFullscreen) {
@@ -73,7 +72,11 @@
             }
         });
 
-        // Verificar la orientación cuando se carga la página y cuando se redimensiona la ventana
+        // Redirige al usuario al hacer clic en button1
+        button1.addEventListener('click', () => {
+            window.location.href = 'https://martingit10.github.io/ThePlatforms/examplelevel.html';
+        });
+
         window.addEventListener('load', checkOrientation);
         window.addEventListener('resize', checkOrientation);
     </script>
