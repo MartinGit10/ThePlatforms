@@ -26,11 +26,10 @@
             if (window.innerHeight > window.innerWidth) {
                 // La pantalla está en modo vertical
                 document.getElementById('horizontalLockImage').style.display = 'block';
-                document.body.style.display = 'none'; // Ocultar el contenido
+                document.documentElement.requestFullscreen(); // Poner la página en pantalla completa
             } else {
                 // La pantalla está en modo horizontal
                 document.getElementById('horizontalLockImage').style.display = 'none';
-                document.body.style.display = 'block'; // Mostrar el contenido
             }
         }
 
