@@ -10,6 +10,7 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
+            overflow: hidden; /* Desactivar el scroll */
         }
         .container {
             display: flex;
@@ -63,14 +64,14 @@
                 document.body.style.display = 'block'; // Mostrar el contenido
             }
         }
-            const fullscreenButton = document.getElementById('fullscreenButton');
 
-    fullscreenButton.addEventListener('click', () => {
-        if (document.documentElement.requestFullscreen) {
-            document.documentElement.requestFullscreen();
-        }
-    });
-                
+        const fullscreenButton = document.getElementById('fullscreenButton');
+
+        fullscreenButton.addEventListener('click', () => {
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
+            }
+        });
 
         // Verificar la orientación cuando se carga la página y cuando se redimensiona la ventana
         window.addEventListener('load', checkOrientation);
