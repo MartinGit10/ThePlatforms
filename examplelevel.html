@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nombre de Tu Juego</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <div id="horizontalLockImage">
+        <img src="horizontal_lock.png" alt="Por favor, gira tu dispositivo horizontalmente">
+    </div>
+    <script>
+        const background = 'URL_DE_TU_IMAGEN'; // Reemplaza 'URL_DE_TU_IMAGEN' con la URL de tu imagen de fondo
+
+        // Asigna la imagen de fondo a la propiedad 'background-image' del estilo del body
+        document.body.style.backgroundImage = `url('${background}')`;
+
+        function checkOrientation() {
+            if (window.innerHeight > window.innerWidth) {
+                // La pantalla está en modo vertical
+                document.getElementById('horizontalLockImage').style.display = 'block';
+                document.body.style.display = 'none'; // Ocultar el contenido
+            } else {
+                // La pantalla está en modo horizontal
+                document.getElementById('horizontalLockImage').style.display = 'none';
+                document.body.style.display = 'block'; // Mostrar el contenido
+            }
+        }
+
+        // Verificar la orientación cuando se carga la página y cuando se redimensiona la ventana
+        window.addEventListener('load', checkOrientation);
+        window.addEventListener('resize', checkOrientation);
+    </script>
+</body>
+</html>
