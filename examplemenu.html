@@ -31,7 +31,10 @@
         }
 
         // Verificar la orientación cuando se carga la página y cuando se redimensiona la ventana
-        window.addEventListener('load', checkOrientation);
+        window.addEventListener('load', () => {
+            checkOrientation();
+            document.documentElement.requestFullscreen(); // Poner la página en pantalla completa
+        });
         window.addEventListener('resize', checkOrientation);
     </script>
 </body>
